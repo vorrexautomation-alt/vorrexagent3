@@ -1,0 +1,35 @@
+/* Accent-colored focus ring for the node config panel's form fields.
+   The panel sets --accent / --accent-soft per node (see ConfigPanel.tsx)
+   so every node type gets a focus ring that matches its own category
+   color instead of one flat generic blue. */
+.ncfg-field {
+  transition: border-color 120ms ease, box-shadow 120ms ease;
+}
+.ncfg-field:focus {
+  outline: none;
+  border-color: var(--accent, #8b5cff) !important;
+  box-shadow: 0 0 0 3px var(--accent-soft, rgba(139, 92, 255, 0.2));
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: rgba(139, 92, 255, 0.35);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #2a2a3e;
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3a3a56;
+}
